@@ -61,10 +61,6 @@ public:
     size_t (* GetCatFeaturesCount)(ModelCalcerHandle* calcer); // NOLINT
     size_t (* GetTreeCount)(ModelCalcerHandle* modelHandle); // NOLINT
     size_t (* GetDimensionsCount)(ModelCalcerHandle* modelHandle); // NOLINT
-
-    bool (* CheckModelMetadataHasKey)(ModelCalcerHandle* modelHandle, const char* keyPtr, size_t keySize); // NOLINT
-    size_t (*GetModelInfoValueSize)(ModelCalcerHandle* modelHandle, const char* keyPtr, size_t keySize); // NOLINT
-    const char* (*GetModelInfoValue)(ModelCalcerHandle* modelHandle, const char* keyPtr, size_t keySize); // NOLINT
 };
 
 
@@ -108,9 +104,6 @@ private:
         load(api.GetIntegerCatFeatureHash, "GetIntegerCatFeatureHash");
         load(api.GetFloatFeaturesCount, "GetFloatFeaturesCount");
         load(api.GetCatFeaturesCount, "GetCatFeaturesCount");
-        tryLoad(api.CheckModelMetadataHasKey, "CheckModelMetadataHasKey");
-        tryLoad(api.GetModelInfoValueSize, "GetModelInfoValueSize");
-        tryLoad(api.GetModelInfoValue, "GetModelInfoValue");
         tryLoad(api.GetTreeCount, "GetTreeCount");
         tryLoad(api.GetDimensionsCount, "GetDimensionsCount");
     }

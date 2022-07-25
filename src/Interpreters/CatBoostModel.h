@@ -23,7 +23,7 @@ public:
     virtual ColumnPtr evaluate(const ColumnRawPtrs & columns) const = 0;
     virtual std::string getTypeName() const = 0;
     virtual DataTypePtr getReturnType() const = 0;
-    virtual ~IMLModel() override = default;
+    ~IMLModel() override = default;
 };
 
 class CatBoostModel : public IMLModel
